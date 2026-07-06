@@ -1,65 +1,46 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { images, stats, services, trustPartners } from '../data/siteData'
 import { countries } from '../data/countries'
 import { testimonials } from '../data/testimonials'
 import CountryCard, { ServiceCard, TestimonialCard, CheckListItem } from '../components/Cards'
 import { FadeIn, CTABanner } from '../components/UI'
+import HeroSlider from '../components/HeroSlider'
 
 export default function Home() {
   return (
     <>
-      {/* Full Screen Hero */}
-      <section className="relative h-screen flex items-center">
+      {/* Full Screen Hero Slider */}
+      <HeroSlider>
+        <div className="max-w-7xl mx-auto px-6 w-full">
+          <div className="max-w-2xl">
+            <span className="inline-block text-red-500 font-semibold text-xs md:text-sm uppercase tracking-[2px] mb-4">
+              Maverick Ghouse
+            </span>
 
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <img
-      src={images.hero}
-      alt="Maverick Ghouse"
-      className="w-full h-full object-cover"
-    />
-  </div>
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Study Abroad.
+              <br />
+              Work Abroad.
+              <br />
+              Succeed Globally.
+            </h1>
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/50"></div>
+            <p className="text-white/80 text-sm md:text-base mb-8">
+              Study Abroad • Internships • Work Visa • Language Training
+            </p>
 
-  {/* Content */}
-  <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div className="flex flex-wrap gap-3 md:gap-4">
+              <button className="bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-md text-sm font-medium hover:bg-red-700 transition">
+                Get Started
+              </button>
 
-    <div className="max-w-2xl">
-
-      <span className="inline-block text-red-500 font-semibold uppercase tracking-[3px] mb-4">
-        Maverick Ghouse
-      </span>
-
-      <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-6">
-        Study Abroad.
-        <br />
-        Work Abroad.
-        <br />
-        Succeed Globally.
-      </h1>
-
-      <p className="text-white/80 text-lg mb-8">
-        Study Abroad • Internships • Work Visa • Language Training
-      </p>
-
-      <div className="flex gap-4">
-        <button className="bg-red-600 text-white px-8 py-4 rounded-md font-medium hover:bg-red-700 transition">
-          Get Started
-        </button>
-
-        <button className="border border-white text-white px-8 py-4 rounded-md font-medium hover:bg-white hover:text-black transition">
-          Learn More
-        </button>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+              <button className="border border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-md text-sm font-medium hover:bg-white hover:text-black transition">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </HeroSlider>
 
       {/* Trust Bar */}
       <section className="bg-white border-y border-gray-100 py-10">
@@ -68,8 +49,8 @@ export default function Home() {
             {stats.map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>
                 <div className="text-center">
-                  <p className="font-poppins font-bold text-3xl md:text-4xl text-primary mb-1">{stat.value}</p>
-                  <p className="text-xs uppercase tracking-widest text-gray-500 font-medium">{stat.label}</p>
+                  <p className="font-poppins font-bold text-xl md:text-2xl text-primary mb-1">{stat.value}</p>
+                  <p className="text-[10px] md:text-xs uppercase tracking-widest text-gray-500 font-medium">{stat.label}</p>
                 </div>
               </FadeIn>
             ))}
@@ -103,9 +84,9 @@ export default function Home() {
               </div>
             </FadeIn>
             <FadeIn direction="left" delay={0.2}>
-              <span className="text-primary font-semibold text-sm uppercase tracking-widest mb-4 block">About Maverick Ghouse</span>
-              <h2 className="heading-lg text-navy mb-6">Building Futures Beyond Borders</h2>
-              <p className="text-body mb-8">
+              <span className="text-primary font-semibold text-xs uppercase tracking-widest mb-4 block">About Maverick Ghouse</span>
+              <h2 className="font-poppins text-2xl md:text-3xl font-bold text-navy mb-6">Building Futures Beyond Borders</h2>
+              <p className="font-inter text-sm md:text-base text-gray-600 leading-relaxed mb-8">
                 Maverick Ghouse bridges the gap between global aspirations and reality. We provide holistic solutions for students and professionals looking to excel in an international landscape.
               </p>
               <ul className="space-y-4 mb-8">
@@ -123,9 +104,9 @@ export default function Home() {
       <section className="section-padding bg-light">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest mb-4 block">Our Expertise</span>
-            <h2 className="heading-lg text-navy mb-4">Comprehensive Global Pathways</h2>
-            <p className="text-body max-w-2xl mx-auto">Everything you need to launch your international career, under one trusted roof.</p>
+            <span className="text-primary font-semibold text-xs uppercase tracking-widest mb-4 block">Our Expertise</span>
+            <h2 className="font-poppins text-2xl md:text-3xl font-bold text-navy mb-4">Comprehensive Global Pathways</h2>
+            <p className="font-inter text-sm md:text-base text-gray-600 max-w-2xl mx-auto">Everything you need to launch your international career, under one trusted roof.</p>
           </FadeIn>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, i) => (
@@ -139,9 +120,9 @@ export default function Home() {
       <section className="section-padding">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest mb-4 block">Destinations</span>
-            <h2 className="heading-lg text-navy mb-4">Explore Top Study Destinations</h2>
-            <p className="text-body max-w-2xl mx-auto">Choose from 15+ countries with world-class education and career opportunities.</p>
+            <span className="text-primary font-semibold text-xs uppercase tracking-widest mb-4 block">Destinations</span>
+            <h2 className="font-poppins text-2xl md:text-3xl font-bold text-navy mb-4">Explore Top Study Destinations</h2>
+            <p className="font-inter text-sm md:text-base text-gray-600 max-w-2xl mx-auto">Choose from 15+ countries with world-class education and career opportunities.</p>
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {countries.slice(0, 4).map((country, i) => (
@@ -158,9 +139,9 @@ export default function Home() {
       <section className="section-padding bg-light">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest mb-4 block">Success Stories</span>
-            <h2 className="heading-lg text-navy mb-4">What Our Students Say</h2>
-            <p className="text-body max-w-2xl mx-auto">Real stories from students who transformed their futures with Maverick Ghouse.</p>
+            <span className="text-primary font-semibold text-xs uppercase tracking-widest mb-4 block">Success Stories</span>
+            <h2 className="font-poppins text-2xl md:text-3xl font-bold text-navy mb-4">What Our Students Say</h2>
+            <p className="font-inter text-sm md:text-base text-gray-600 max-w-2xl mx-auto">Real stories from students who transformed their futures with Maverick Ghouse.</p>
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.slice(0, 3).map((t, i) => (

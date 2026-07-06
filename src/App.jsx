@@ -12,6 +12,11 @@ import SuccessStories from './pages/SuccessStories'
 import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
+import Employers from './pages/Employers'
+import JobSeekers from './pages/JobSeekers'
+import CollegeCollaboration from './pages/CollegeCollaboration'
+import Internship from './pages/Internship'
+import ForCollegeStudents from './pages/ForCollegeStudents'
 
 export default function App() {
   return (
@@ -29,6 +34,11 @@ export default function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="terms-of-service" element={<TermsOfService />} />
+        <Route path="employers" element={<Employers />} />
+        <Route path="job-seekers" element={<JobSeekers />} />
+        <Route path="college-collaboration" element={<CollegeCollaboration />} />
+        <Route path="internship" element={<Internship />} />
+        <Route path="for-college-students" element={<ForCollegeStudents />} />
       </Route>
     </Routes>
   )
