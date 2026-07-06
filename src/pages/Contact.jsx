@@ -16,9 +16,15 @@ const contactInfo = [
     icon: 'mail',
   },
   {
-    title: 'Office Address',
+    title: 'Chennai Office',
     value: 'Maverick Ghouse',
-    sub: '3, Mosque St, Jaya Nagar, Porur, Chennai, Tamil Nadu 600116,  India',
+    sub: '3, Mosque St, Jaya Nagar, Porur, Chennai, Tamil Nadu 600116, India',
+    icon: 'map-pin',
+  },
+  {
+    title: 'Jaipur Office',
+    value: 'Maverick Ghouse',
+    sub: 'Office 46, 4th Floor, Signature Elite, Narayan Singh Circle Foot Over Bridge, Rambagh, Jaipur, Rajasthan 302004',
     icon: 'map-pin',
   },
   {
@@ -67,17 +73,31 @@ export default function Contact() {
                 ))}
               </div>
 
-              <div className="rounded-2xl overflow-hidden shadow-lg h-64 bg-gray-200">
-                <iframe
-                  title="Maverick Ghouse Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.011937006436!2d80.15191927507756!3d13.03491168728634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAyJzA1LjciTiA4MMKwMDknMTYuMiJF!5e0!3m2!1sen!2sin!4v1781674886129!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="rounded-2xl overflow-hidden shadow-lg h-64 bg-gray-200">
+                  <iframe
+                    title="Maverick Ghouse Chennai Office"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.011937006436!2d80.15191927507756!3d13.03491168728634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAyJzA1LjciTiA4MMKwMDknMTYuMiJF!5e0!3m2!1sen!2sin!4v1781674886129!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-lg h-64 bg-gray-200">
+                  <iframe
+                    title="Maverick Ghouse Jaipur Office"
+                    src="https://maps.google.com/maps?q=Office+46+Signature+Elite+Narayan+Singh+Circle+Rambagh+Jaipur+302004&hl=en&z=15&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </div>
             </FadeIn>
 
