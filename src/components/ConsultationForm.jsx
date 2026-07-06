@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { AppIcon } from './icons/AppIcon'
-import emailjs from '@emailjs/browser'
+
+const WHATSAPP_NUMBER = '918925890437'
+
 const programs = [
   'Study Abroad',
   'International Internships',
@@ -25,25 +27,23 @@ export default function ConsultationForm({ compact = false, title = 'Book Your F
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
-  const handleSubmit = async (e) => {
-  e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
-  try {
-    await emailjs.send(
-  'service_jh92tkd',
-  'template_8z1735b',
-  {
-    from_name: formData.name,
-    from_email: formData.email,
-    phone: formData.phone,
-    program: formData.program,
-    message: formData.message,
-  },
-  'TIJYuKn1iSmXjfzKJ'
-)
+    const message = [
+      '*New Consultation Request - Maverick Ghouse*',
+      '',
+      `*Name:* ${formData.name}`,
+      `*Phone:* ${formData.phone}`,
+      `*Email:* ${formData.email}`,
+      `*Program:* ${formData.program}`,
+      `*Message:* ${formData.message || 'N/A'}`,
+    ].join('\n')
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
 
     setSubmitted(true)
-
     setFormData({
       name: '',
       phone: '',
@@ -51,12 +51,7 @@ export default function ConsultationForm({ compact = false, title = 'Book Your F
       program: '',
       message: '',
     })
-  } catch (error) {
-    console.error('EmailJS Error:', error)
-    alert('Failed to send consultation request')
   }
-}
-  
 
   if (submitted) {
     return (
@@ -69,7 +64,7 @@ export default function ConsultationForm({ compact = false, title = 'Book Your F
           <AppIcon name="check" size="xl" className="text-green-600" strokeWidth={2.5} />
         </div>
         <h3 className="heading-md text-navy mb-2">Thank You!</h3>
-        <p className="text-body">Our counselor will contact you within 24 hours.</p>
+        <p className="text-body">Your enquiry has been sent via WhatsApp. Our counselor will contact you within 24 hours.</p>
       </motion.div>
     )
   }
