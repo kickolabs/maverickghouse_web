@@ -6,8 +6,7 @@ import { FadeIn, PageHero } from '../components/UI'
 const contactInfo = [
   {
     title: 'Phone',
-    value: '+91 78458 78744',
-    sub: '+91 89258 98725',
+    numbers: ['+91 89258 90437', '+91 89255 17562'],
     icon: 'phone',
   },
   {
@@ -53,8 +52,16 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-poppins font-semibold text-navy text-sm mb-1">{info.title}</h3>
-                      <p className="text-sm text-gray-700">{info.value}</p>
-                      <p className="text-xs text-gray-500 mt-1">{info.sub}</p>
+                      {info.numbers ? (
+                        info.numbers.map((num) => (
+                          <p key={num} className="text-sm text-gray-700">{num}</p>
+                        ))
+                      ) : (
+                        <>
+                          <p className="text-sm text-gray-700">{info.value}</p>
+                          <p className="text-xs text-gray-500 mt-1">{info.sub}</p>
+                        </>
+                      )}
                     </div>
                   </div>
                 ))}

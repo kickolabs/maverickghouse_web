@@ -19,19 +19,19 @@ const whyChoose = [
 ]
 
 const timeline = [
-  { year: '2010', title: 'Founded', description: 'Maverick Ghouse established with a vision to democratize global education.' },
-  { year: '2013', title: 'UK Expansion', description: 'Partnered with 50+ UK universities and launched study abroad division.' },
-  { year: '2016', title: 'Internship Program', description: 'Launched international internship placements across Europe and North America.' },
-  { year: '2018', title: 'Lord Of Languages', description: 'Opened premium language training center for IELTS, PTE, and German.' },
-  { year: '2020', title: 'Work Visa Division', description: 'Expanded into skilled migration and work visa consulting.' },
-  { year: '2024', title: '5000+ Students', description: 'Milestone of guiding 5000+ students to their dream destinations.' },
+  { title: 'Founded', description: 'Maverick Ghouse established with a vision to democratize global education.' },
+  { title: 'UK Expansion', description: 'Partnered with 50+ UK universities and launched study abroad division.' },
+  { title: 'Internship Program', description: 'Launched international internship placements across Europe and North America.' },
+  { title: 'Lord Of Languages', description: 'Opened premium language training center for IELTS, PTE, and German.' },
+  { title: 'Work Visa Division', description: 'Expanded into skilled migration and work visa consulting.' },
+  { title: '5000+ Students', description: 'Milestone of guiding 5000+ students to their dream destinations.' },
 ]
 
 const team = [
-  { name: 'Rajesh Ghouse', role: 'Founder & CEO', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
-  { name: 'Dr. Sarah Mitchell', role: 'Head of Admissions', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-  { name: 'Michael Chen', role: 'Visa & Immigration Lead', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80' },
-  { name: 'Priya Nambiar', role: 'Language Training Director', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' },
+  { name: 'Ghouse Mohideen', role: 'Founder & CEO', icon: 'users' },
+  { name: 'Lokeshwari', role: 'HR', icon: 'user-check' },
+  { name: 'Bibin', role: 'Language Trainer', icon: 'languages' },
+  { name: 'Lokeshwari', role: 'Visa & Immigration', icon: 'globe' },
 ]
 
 export default function About() {
@@ -139,10 +139,9 @@ export default function About() {
           <div className="relative max-w-3xl mx-auto">
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 md:-translate-x-px" />
             {timeline.map((item, i) => (
-              <FadeIn key={item.year} delay={i * 0.1}>
+              <FadeIn key={item.title} delay={i * 0.1}>
                 <div className={`relative flex items-center gap-8 mb-12 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'} pl-20 md:pl-0`}>
-                    <span className="text-primary font-bold text-sm">{item.year}</span>
                     <h3 className="font-poppins font-semibold text-lg text-navy">{item.title}</h3>
                     <p className="text-sm text-gray-600">{item.description}</p>
                   </div>
@@ -163,15 +162,10 @@ export default function About() {
           </FadeIn>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, i) => (
-              <FadeIn key={member.name} delay={i * 0.1}>
+              <FadeIn key={`${member.name}-${member.role}`} delay={i * 0.1}>
                 <div className="group text-center">
-                  <div className="relative rounded-2xl overflow-hidden aspect-square mb-4 shadow-lg">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
+                  <div className="flex justify-center mb-4">
+                    <IconBox name={member.icon} size="2xl" variant="primary" rounded="full" className="!w-20 !h-20" />
                   </div>
                   <h3 className="font-poppins font-semibold text-navy">{member.name}</h3>
                   <p className="text-sm text-primary">{member.role}</p>

@@ -10,6 +10,8 @@ import Countries from './pages/Countries'
 import CountryDetail from './pages/CountryDetail'
 import SuccessStories from './pages/SuccessStories'
 import Contact from './pages/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
         <Route path="countries/:slug" element={<CountryDetail />} />
         <Route path="success-stories" element={<SuccessStories />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="terms-of-service" element={<TermsOfService />} />
       </Route>
     </Routes>
   )
