@@ -5,6 +5,7 @@ import { testimonials } from '../data/testimonials'
 import CountryCard, { ServiceCard, TestimonialCard, CheckListItem } from '../components/Cards'
 import { FadeIn, CTABanner } from '../components/UI'
 import HeroSlider from '../components/HeroSlider'
+import AssociatePartners from '../components/AssociatePartners'
 
 export default function Home() {
   return (
@@ -115,6 +116,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Associate Partners */}
+        <AssociatePartners />
 
       {/* Countries Preview */}
       <section className="section-padding">
