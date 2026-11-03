@@ -6,6 +6,7 @@ import CountryCard, { ServiceCard, TestimonialCard, CheckListItem } from '../com
 import { FadeIn, CTABanner } from '../components/UI'
 import HeroSlider from '../components/HeroSlider'
 import AssociatePartners from '../components/AssociatePartners'
+import Collaborations from '../components/Collaborations'
 
 export default function Home() {
   return (
@@ -138,6 +139,9 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Our Collaborations */}
+        <Collaborations />
 
       {/* Testimonials Preview */}
       <section className="section-padding bg-light">
